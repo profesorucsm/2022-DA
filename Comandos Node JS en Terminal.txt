@@ -1,0 +1,22 @@
+Comandos Node en Terminal
+-------------------------
+
+Mostrar la version de Node.js instalado
+node -v
+
+
+Crear package JSon
+npm init
+
+
+Ejecutar archivo Javascript en consola
+node nombre_archivo.js
+
+
+Crear proyecto basico React
+npx create-react-app nombre-proyecto
+
+
+Levantar proyecto React en Navegador (puerto 3000)
+npm run start
+
