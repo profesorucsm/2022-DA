@@ -1,5 +1,7 @@
+//import { getQueriesForElement } from '@testing-library/react';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import ABC from './MiComponente/MiComponente';
 
 ////////// VIRTUAL DOM //////////
 /*
@@ -50,10 +52,83 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(App('Se envio este parametro'));
 */
 
+
+//////// Estilos ////////
 /*
+import './App.css';
+
+function App(){
+  const objetoEstilo={
+    color:"green",
+    fontSize: "40px"
+  }
+  return (
+    <div>
+          <h2 style={objetoEstilo}>Prueba1</h2>
+          <h2 style={{color:"red"}}>Prueba2</h2>
+          <h1>Prueba3</h1>
+    </div>
+  );
+}
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App/>);
+*/
+
+///// LISTAS ARREGLOS Y RECORRIDOS ///////
+  ///// FORMA 2 //////  
+/*
+function Car(props) {
+  return <li>I am a { props.brand }</li>;
+}
+
+function Garage() {
+  const cars = ['Ford', 'BMW', 'Audi'];
+  return (
+    <>
+      <h1>Who lives in my garage?</h1>
+      <ul>
+        {cars.map((car) => <Car brand={car} />)}
+      </ul>
+    </>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Garage />);
+*/
+
+  ///// FORMA 2 //////
+/*
+function Car(props) {
+  return <li>I am a { props.brand }</li>;
+}
+
+function Garage() {
+  const cars = [
+    {id: 1, brand: 'Ford'},
+    {id: 2, brand: 'BMW'},
+    {id: 3, brand: 'Audi'}
+  ];
+  return (
+    <>
+      <h1>Who lives in my garage?</h1>
+      <ul>
+        {cars.map((car) => <Car key={car.id} brand={car.brand} />)}
+      </ul>
+    </>
+  );
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Garage />);
+*/
+
+
 //////// Componente SIN Estado ////////
+/*
 function Header(){ return (<header>Cabecera</header>);}
 function Footer(){ return (<footer>PiePagina</footer>);}
+
 function Main(props){
   const {children} = props;
   return (<main>{children}</main>);
@@ -70,13 +145,17 @@ function Tarjeta(props){
 }
 
 function App(){
+  const objetoEstilo={
+    color:"green",
+    fontSize: "40px"
+  }
   return (
     <div>
       <Header/>
       <Main>
           <h2>Prueba1</h2>
           <h2>Prueba2</h2>
-          <h2>Prueba3</h2>
+          <h2>Prueba3</h1>
           <Tarjeta nombre="Carlos" edad="22"/>
           <Tarjeta nombre="Pedro" edad="33"/>
           <Tarjeta nombre="Oscar" edad="44"/>
@@ -89,6 +168,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<App/>);
 */
 
+/*
 //////// Componente CON Estado ////////
 class ComponenteConEstado extends React.Component{
   constructor(props){
@@ -127,9 +207,34 @@ class ComponenteConEstado extends React.Component{
       </div>
     );
   }
+  
 
 
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<ComponenteConEstado/>);
+*/
+
+/*
+ /////////// HOOK useState ///////////
+import { useState } from "react";
+//import ReactDOM from "react-dom/client";
+
+function FavoriteColor() {
+  const [color, setColor] = useState("red");
+
+  return (
+    <>
+      <h1>My favorite color is {color}!</h1>
+      <button
+        type="button"
+        onClick={() => setColor("blue")}
+      >Blue</button>
+    </>
+  )
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<FavoriteColor />);
+*/
