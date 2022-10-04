@@ -216,8 +216,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<ComponenteConEstado/>);
 */
 
-/*
+
  /////////// HOOK useState ///////////
+/*
 import { useState } from "react";
 //import ReactDOM from "react-dom/client";
 
@@ -238,3 +239,63 @@ function FavoriteColor() {
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<FavoriteColor />);
 */
+
+////////// HOOK useState Objects //////////
+/*
+import { useState } from "react";
+//import ReactDOM from "react-dom/client";
+
+function Car() {
+  const [car, setCar] = useState({
+    brand: "Ford",
+    model: "Mustang",
+    year: "1964",
+    color: "red"
+  });
+  
+  const updateColor = () => {
+  //  setCar(previousState => {
+  //    return { ...previousState, color: "blue" }
+  return(setCar({
+    brand: "Toyota",
+    model: "Corolla",
+    year: "2013",
+    color: "azul"
+    }));
+  }
+
+  return (
+    <>
+      <h1>My {car.brand}</h1>
+      <p>
+        It is a {car.color} {car.model} from {car.year}.
+      </p>
+      <button
+        type="button"
+        onClick={updateColor}
+      >Blue</button>
+    </>
+  )
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Car />);
+*/
+////////// HOOK useEffect //////////
+import { useState, useEffect } from "react";
+//import ReactDOM from "react-dom/client";
+
+function Timer() {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setCount((count) => count + 1);
+    }, 1000);
+  }, []); // <- add empty brackets here
+
+  return <h1>I've rendered {count} times!</h1>;
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Timer />);
