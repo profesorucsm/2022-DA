@@ -1,0 +1,104 @@
+******* RECURSOS para FLASK y DJANGO ******* 
+
+Instalar Python 3 en Ubuntu
+https://docs.python-guide.org/starting/install3/linux/
+
+Intalar Pip3 en Ubuntu
+https://linuxize.com/post/how-to-install-pip-on-ubuntu-18.04/
+
+Crear Proyecto Flask con VSCode
+https://code.visualstudio.com/docs/python/tutorial-flask
+
+Crear Proyeccto Django con VSCode
+https://code.visualstudio.com/docs/python/tutorial-django
+
+Instalar SqliteBrowser
+https://sqlitebrowser.org/dl/
+https://linuxhint.com/install-sqlite-browser-ubuntu/
+
+
+
+------------
+******* COMANDOS DJANGO *******
+
+Crear Superusuario
+------------------
+python3 manage.py createsuperuser
+
+
+Crear modelos en la BD (SQLite3)
+--------------------------------
+python3 manage.py makemigrations nombre_aplicacion
+python3 manage.py migrate
+
+
+Añadir la aplicación donde vamos a trabajar al "settings.py" del proyecto
+-------------------------------------------------------------------------
+En la siguiente sección del archivo "setting.py" añadir el nombre de la aplicación "nombre_nuestra_aplicacion" al final de de todos los elementos de la lista (luego de los ...,)
+
+INSTALLED_APPS = [
+	...,
+	nombre_nuestra_aplicacion
+
+]
+
+***********
+***********
+
+INSTALAR SQLITEBROWSER
+----------------------
+sudo apt update
+sudo apt install sqlitebrowser
+
+
+***********
+***********
+
+INSTALAR MYSQL
+--------------
+sudo apt update
+sudo apt install mysql-server
+sudo apt install mysql-client	(opcional)
+
+CONFIGURAR MYSQL
+----------------
+sudo mysql_secure_installation
+
+PROBAR MYSQL
+------------
+systemctl status mysql.service
+sudo systemctl start mysql	(en caso no este activo)
+
+PROBAR CONECTARSE DESDE CLIENTE
+----------------------------------
+sudo mysqladmin -p -u root version
+
+
+*************
+*************
+CONFIGURAR DJANGO Y MYSQL
+-------------------------
+
+pip install mysqlclient
+
+CONFIGURACION EN "settings.py" DE NUESTRO PROYECTO DJANGO
+------------------------------------------------------
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'mydb',
+        'USER': 'root',
+        'PASSWORD': 'admin',
+        'HOST':'localhost',
+        'PORT':'3306',
+    }
+}
+
+python manage.py makemigrations
+python manage.py migrate
+
+
+
+
+

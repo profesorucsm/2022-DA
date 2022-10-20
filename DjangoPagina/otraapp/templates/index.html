@@ -1,0 +1,17 @@
+<h1>Miembros</h1>
+
+<table border="1">
+{% for x in mismiembros %}
+<tr>
+<td>{{ x.id }}</td>
+<td>{{ x.primerNombre }}</td>
+<td>{{ x.apellido }}</td>
+<td><a href="delete/{{ x.id }}">Borrar</a></td>
+<td><a href="update/{{ x.id }}">Actualizar</a></td>
+</tr>
+{% endfor %}
+</table>
+
+<p>
+    <a href="add/">Añadir miembro</a>
+</p>

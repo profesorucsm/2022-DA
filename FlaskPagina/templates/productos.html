@@ -1,0 +1,14 @@
+<html>
+    <body>
+        <table border="1">
+            <tr>
+                <td>Codigo</td><td>Decripcion</td><td>Precio</td>  
+            </tr>
+            {% for item in productos %}
+            <tr>
+                <td>{{item.codigo}}</td><td>{{item.descripcion}}</td><td>{{item.precio}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>
