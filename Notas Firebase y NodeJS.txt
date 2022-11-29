@@ -1,0 +1,28 @@
+Notas Firebase y NodeJS
+
+- Explicar que es Firebase (Nube, Realtime, Planes, JSON, Google)
+
+- Crear un proyecto y una Base de datos Cloud Firestore.
+
+- Mencionar la existencia de otras herramientas útiles en Firebase como Storage y Hosting.
+
+- Crear carpeta para proyecto NodeJS con FireBase
+
+- Crear archivo package.json
+	npm init -f
+
+- Instalar paquete de firebase
+	npm -i firebase-admin
+
+- Crear archivo clave privada para conexion de Firebase con NodeJS, cambiarle de nombre y colocarla en la carpeta de proyecto NodeJS con Firebase.
+
+- Crear archivo "index.js" y colocar el codigo respectivo y ejecutarlo
+nodemon index.js
+ó
+node index.js
+
+
+
+
+
+

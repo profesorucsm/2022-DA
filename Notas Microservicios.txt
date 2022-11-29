@@ -1,0 +1,50 @@
+1. Explicar qué es un Microservicio y cuando usarlo (pueden crearse en diferentes lenguajes de programación, aunque pertenezcan al mismo negocio, puede interactuar con otros microservicios del negocio, implementa una funcionalidad de negocio individual, utilizados cuando crece la complejidad de la aplicación y la cantidad de datos a gestionar)
+
+2. Explicar la arquitectura de Microservicios
+
+3. Crear carpeta para proyecto Django con microservicios "djangomicro"
+
+4. Crear entorno virtual para carpeta de proyecto, activar interprete, instalar Django y paquete djangorestframework
+
+	python3 -m venv .venv
+	source .venv/bin/activate
+
+	python3 -m pip install django
+
+	pip install djangorestframework
+
+5. Crear proyecto
+	django-admin startproject spotify
+
+6. Crear aplicación
+	python3 manage.py startapp temas
+
+7. Activar base de datos de datos local para creación de usuarios
+	python3 manage.py migrate
+
+8. Crear superusuario
+	python3 manage.py createsuperuser
+
+9. Dentro de la carpeta del proyecto modificar el archivo "spotify/settings.py" y agregarle a la variable:
+
+INSTALLED_APPS = [
+	...
+	'temas',
+	'rest_framework'
+]
+
+10. Crear archivos "temas/models.py" y "temas/admin.py"
+
+11. Agregar modelos a la BD
+	python3 manage.py makemigrations temas
+	python3 manage.py migrate
+
+12. Ejecutar la aplicación
+	python manage.py runserver
+
+13. Ingresar datos desde el navegador
+
+14. Modificar archivos "temas/serializer.py", "temas/views.py", "temas/urls.py" y "spotify/urls.py" adicionales.
+
+15. Ejecutar la aplicación
+	python manage.py runserver
